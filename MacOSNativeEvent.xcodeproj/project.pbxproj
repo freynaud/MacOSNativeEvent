@@ -1,0 +1,224 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6D69B7E13CB748B00B5BAA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */; };
+		F6D69B8113CB748B00B5BAA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D69B8013CB748B00B5BAA5 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F6D69B7713CB748B00B5BAA5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F6D69B7913CB748B00B5BAA5 /* MacOSNativeEvent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacOSNativeEvent; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F6D69B8013CB748B00B5BAA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F6D69B8313CB748B00B5BAA5 /* MacOSNativeEvent-Prefix.pch */ = {isa = PBXFileReference; path = "MacOSNativeEvent-Prefix.pch"; sourceTree = "<group>"; };
+		F6D69B8413CB748B00B5BAA5 /* MacOSNativeEvent.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MacOSNativeEvent.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6D69B7613CB748B00B5BAA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D69B7E13CB748B00B5BAA5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6D69B6E13CB748B00B5BAA5 = {
+			isa = PBXGroup;
+			children = (
+				F6D69B7F13CB748B00B5BAA5 /* MacOSNativeEvent */,
+				F6D69B7C13CB748B00B5BAA5 /* Frameworks */,
+				F6D69B7A13CB748B00B5BAA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6D69B7A13CB748B00B5BAA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6D69B7913CB748B00B5BAA5 /* MacOSNativeEvent */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6D69B7C13CB748B00B5BAA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6D69B7F13CB748B00B5BAA5 /* MacOSNativeEvent */ = {
+			isa = PBXGroup;
+			children = (
+				F6D69B8013CB748B00B5BAA5 /* main.m */,
+				F6D69B8413CB748B00B5BAA5 /* MacOSNativeEvent.1 */,
+				F6D69B8213CB748B00B5BAA5 /* Supporting Files */,
+			);
+			path = MacOSNativeEvent;
+			sourceTree = "<group>";
+		};
+		F6D69B8213CB748B00B5BAA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6D69B8313CB748B00B5BAA5 /* MacOSNativeEvent-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6D69B7813CB748B00B5BAA5 /* MacOSNativeEvent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6D69B8713CB748B00B5BAA5 /* Build configuration list for PBXNativeTarget "MacOSNativeEvent" */;
+			buildPhases = (
+				F6D69B7513CB748B00B5BAA5 /* Sources */,
+				F6D69B7613CB748B00B5BAA5 /* Frameworks */,
+				F6D69B7713CB748B00B5BAA5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacOSNativeEvent;
+			productName = MacOSNativeEvent;
+			productReference = F6D69B7913CB748B00B5BAA5 /* MacOSNativeEvent */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6D69B7013CB748B00B5BAA5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F6D69B7313CB748B00B5BAA5 /* Build configuration list for PBXProject "MacOSNativeEvent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F6D69B6E13CB748B00B5BAA5;
+			productRefGroup = F6D69B7A13CB748B00B5BAA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6D69B7813CB748B00B5BAA5 /* MacOSNativeEvent */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6D69B7513CB748B00B5BAA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D69B8113CB748B00B5BAA5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F6D69B8513CB748B00B5BAA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F6D69B8613CB748B00B5BAA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F6D69B8813CB748B00B5BAA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacOSNativeEvent/MacOSNativeEvent-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F6D69B8913CB748B00B5BAA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacOSNativeEvent/MacOSNativeEvent-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6D69B7313CB748B00B5BAA5 /* Build configuration list for PBXProject "MacOSNativeEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D69B8513CB748B00B5BAA5 /* Debug */,
+				F6D69B8613CB748B00B5BAA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6D69B8713CB748B00B5BAA5 /* Build configuration list for PBXNativeTarget "MacOSNativeEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D69B8813CB748B00B5BAA5 /* Debug */,
+				F6D69B8913CB748B00B5BAA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F6D69B7013CB748B00B5BAA5 /* Project object */;
+}
