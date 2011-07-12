@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F69BC14F13CC9C1A00A38EBA /* HTTPResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F69BC14C13CC9C1A00A38EBA /* HTTPResponseHandler.m */; };
+		F69BC15013CC9C1A00A38EBA /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F69BC14E13CC9C1A00A38EBA /* HTTPServer.m */; };
 		F6D69B7E13CB748B00B5BAA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */; };
 		F6D69B8113CB748B00B5BAA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D69B8013CB748B00B5BAA5 /* main.m */; };
+		F6D69B8C13CB776A00B5BAA5 /* EventAwareApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D69B8B13CB776A00B5BAA5 /* EventAwareApplication.m */; };
+		F6D69B8E13CB865900B5BAA5 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D69B8D13CB865900B5BAA5 /* ApplicationServices.framework */; };
+		F6D69B9013CB8B6E00B5BAA5 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D69B8F13CB8B6E00B5BAA5 /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,11 +29,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F69BC14B13CC9C1A00A38EBA /* HTTPResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponseHandler.h; sourceTree = "<group>"; };
+		F69BC14C13CC9C1A00A38EBA /* HTTPResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseHandler.m; sourceTree = "<group>"; };
+		F69BC14D13CC9C1A00A38EBA /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		F69BC14E13CC9C1A00A38EBA /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		F69BC15113CC9C2600A38EBA /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		F6D69B7913CB748B00B5BAA5 /* MacOSNativeEvent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacOSNativeEvent; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6D69B8013CB748B00B5BAA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F6D69B8313CB748B00B5BAA5 /* MacOSNativeEvent-Prefix.pch */ = {isa = PBXFileReference; path = "MacOSNativeEvent-Prefix.pch"; sourceTree = "<group>"; };
+		F6D69B8313CB748B00B5BAA5 /* MacOSNativeEvent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacOSNativeEvent-Prefix.pch"; sourceTree = "<group>"; };
 		F6D69B8413CB748B00B5BAA5 /* MacOSNativeEvent.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MacOSNativeEvent.1; sourceTree = "<group>"; };
+		F6D69B8A13CB762D00B5BAA5 /* EventAwareApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventAwareApplication.h; sourceTree = "<group>"; };
+		F6D69B8B13CB776A00B5BAA5 /* EventAwareApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventAwareApplication.m; sourceTree = "<group>"; };
+		F6D69B8D13CB865900B5BAA5 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		F6D69B8F13CB8B6E00B5BAA5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D69B7E13CB748B00B5BAA5 /* Foundation.framework in Frameworks */,
+				F6D69B8E13CB865900B5BAA5 /* ApplicationServices.framework in Frameworks */,
+				F6D69B9013CB8B6E00B5BAA5 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +79,8 @@
 		F6D69B7C13CB748B00B5BAA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6D69B8F13CB8B6E00B5BAA5 /* AppKit.framework */,
+				F6D69B8D13CB865900B5BAA5 /* ApplicationServices.framework */,
 				F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -71,6 +89,13 @@
 		F6D69B7F13CB748B00B5BAA5 /* MacOSNativeEvent */ = {
 			isa = PBXGroup;
 			children = (
+				F69BC14B13CC9C1A00A38EBA /* HTTPResponseHandler.h */,
+				F69BC14C13CC9C1A00A38EBA /* HTTPResponseHandler.m */,
+				F69BC14D13CC9C1A00A38EBA /* HTTPServer.h */,
+				F69BC14E13CC9C1A00A38EBA /* HTTPServer.m */,
+				F69BC15113CC9C2600A38EBA /* SynthesizeSingleton.h */,
+				F6D69B8A13CB762D00B5BAA5 /* EventAwareApplication.h */,
+				F6D69B8B13CB776A00B5BAA5 /* EventAwareApplication.m */,
 				F6D69B8013CB748B00B5BAA5 /* main.m */,
 				F6D69B8413CB748B00B5BAA5 /* MacOSNativeEvent.1 */,
 				F6D69B8213CB748B00B5BAA5 /* Supporting Files */,
@@ -134,6 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D69B8113CB748B00B5BAA5 /* main.m in Sources */,
+				F6D69B8C13CB776A00B5BAA5 /* EventAwareApplication.m in Sources */,
+				F69BC14F13CC9C1A00A38EBA /* HTTPResponseHandler.m in Sources */,
+				F69BC15013CC9C1A00A38EBA /* HTTPServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +173,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -163,6 +192,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -217,6 +247,7 @@
 				F6D69B8913CB748B00B5BAA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
