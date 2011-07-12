@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F69BC14F13CC9C1A00A38EBA /* HTTPResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F69BC14C13CC9C1A00A38EBA /* HTTPResponseHandler.m */; };
 		F69BC15013CC9C1A00A38EBA /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F69BC14E13CC9C1A00A38EBA /* HTTPServer.m */; };
+		F69BC15413CCA2C900A38EBA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F69BC15313CCA2C900A38EBA /* JSONKit.m */; };
 		F6D69B7E13CB748B00B5BAA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */; };
 		F6D69B8113CB748B00B5BAA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D69B8013CB748B00B5BAA5 /* main.m */; };
 		F6D69B8C13CB776A00B5BAA5 /* EventAwareApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D69B8B13CB776A00B5BAA5 /* EventAwareApplication.m */; };
@@ -34,6 +35,8 @@
 		F69BC14D13CC9C1A00A38EBA /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
 		F69BC14E13CC9C1A00A38EBA /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
 		F69BC15113CC9C2600A38EBA /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		F69BC15213CCA2C900A38EBA /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		F69BC15313CCA2C900A38EBA /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		F6D69B7913CB748B00B5BAA5 /* MacOSNativeEvent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacOSNativeEvent; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D69B7D13CB748B00B5BAA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6D69B8013CB748B00B5BAA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,16 +92,13 @@
 		F6D69B7F13CB748B00B5BAA5 /* MacOSNativeEvent */ = {
 			isa = PBXGroup;
 			children = (
-				F69BC14B13CC9C1A00A38EBA /* HTTPResponseHandler.h */,
-				F69BC14C13CC9C1A00A38EBA /* HTTPResponseHandler.m */,
-				F69BC14D13CC9C1A00A38EBA /* HTTPServer.h */,
-				F69BC14E13CC9C1A00A38EBA /* HTTPServer.m */,
-				F69BC15113CC9C2600A38EBA /* SynthesizeSingleton.h */,
 				F6D69B8A13CB762D00B5BAA5 /* EventAwareApplication.h */,
 				F6D69B8B13CB776A00B5BAA5 /* EventAwareApplication.m */,
 				F6D69B8013CB748B00B5BAA5 /* main.m */,
 				F6D69B8413CB748B00B5BAA5 /* MacOSNativeEvent.1 */,
 				F6D69B8213CB748B00B5BAA5 /* Supporting Files */,
+				F69BC15213CCA2C900A38EBA /* JSONKit.h */,
+				F69BC15313CCA2C900A38EBA /* JSONKit.m */,
 			);
 			path = MacOSNativeEvent;
 			sourceTree = "<group>";
@@ -106,6 +106,11 @@
 		F6D69B8213CB748B00B5BAA5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F69BC15113CC9C2600A38EBA /* SynthesizeSingleton.h */,
+				F69BC14B13CC9C1A00A38EBA /* HTTPResponseHandler.h */,
+				F69BC14C13CC9C1A00A38EBA /* HTTPResponseHandler.m */,
+				F69BC14D13CC9C1A00A38EBA /* HTTPServer.h */,
+				F69BC14E13CC9C1A00A38EBA /* HTTPServer.m */,
 				F6D69B8313CB748B00B5BAA5 /* MacOSNativeEvent-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -162,6 +167,7 @@
 				F6D69B8C13CB776A00B5BAA5 /* EventAwareApplication.m in Sources */,
 				F69BC14F13CC9C1A00A38EBA /* HTTPResponseHandler.m in Sources */,
 				F69BC15013CC9C1A00A38EBA /* HTTPServer.m in Sources */,
+				F69BC15413CCA2C900A38EBA /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +215,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacOSNativeEvent/MacOSNativeEvent-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -222,6 +229,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacOSNativeEvent/MacOSNativeEvent-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";

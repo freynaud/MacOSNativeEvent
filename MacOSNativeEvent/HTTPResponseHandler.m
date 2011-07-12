@@ -14,6 +14,7 @@
 
 #import "HTTPResponseHandler.h"
 #import "HTTPServer.h"
+#import "JSONKit.h"
 
 @implementation HTTPResponseHandler
 
@@ -301,7 +302,14 @@ static NSMutableArray *registeredHandlers = nil;
 }
 
 - (NSString*) process: (NSString*)method withURL:(NSURL*)url andJSON:(NSString*)json {
-    return @"DONE";
+    if (json != nil){
+        NSDictionary *deserializedData = [json objectFromJSONString];
+        //Helpful snippet to log all the deserialized objects and their keys
+        NSLog(@"%@", [deserializedData description]);
+        return [NSString stringWithFormat: @"POST %@" , json ];
+    }else {
+        [NSString stringWithFormat: @"GET %@" , [url absoluteURL] ];
+    }
 }
 
 //
