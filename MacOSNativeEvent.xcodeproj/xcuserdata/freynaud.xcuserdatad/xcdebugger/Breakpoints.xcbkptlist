@@ -77,11 +77,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MacOSNativeEvent/EventFactory.m"
-         timestampString = "332190504.69322"
+         timestampString = "332191085.146792"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-mouseDown:onY:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -118,26 +118,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "MacOSNativeEvent/AUT.m"
-         timestampString = "332190504.69322"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "126"
-         endingLineNumber = "126"
-         landmarkName = "-windowId"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "MacOSNativeEvent/EventFactory.m"
-         timestampString = "332190504.69322"
+         timestampString = "332191085.146792"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "59"
-         endingLineNumber = "59"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "-mouseDown:onY:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -146,26 +132,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "MacOSNativeEvent/AUT.m"
-         timestampString = "332190504.69322"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
-         landmarkName = "-windowId"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "MacOSNativeEvent/EventFactory.m"
-         timestampString = "332190504.69322"
+         timestampString = "332191085.146792"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "86"
-         endingLineNumber = "86"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-mouseUp:onY:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -18,7 +18,7 @@ static int safariMenuHeigth;
 
 - (id) initWithApplication: (AUT*) app;
 
-- (void) mouseDown: (int)x onY:(int)y;
-- (void) mouseUp: (int)x onY:(int)y;
+- (CGEventRef) mouseDown: (int)x onY:(int)y;
+- (CGEventRef) mouseUp: (int)x onY:(int)y;
 
 @end

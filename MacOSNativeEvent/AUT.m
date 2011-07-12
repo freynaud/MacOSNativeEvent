@@ -135,66 +135,14 @@
 
 
 - (void) mouseDown: (int)x onY:(int)y {
-    /*CGEventRef CGEvent;
-    NSEvent *customEvent;
-    NSRect screen = [[NSScreen mainScreen]frame];
-    NSSize size= screen.size;
-    
-    int maxX = size.width; 
-    int maxY = size.height;
-    
-    
-    int offsetY = maxY - safariMenuHeigth - y;
-    NSPoint point = {x,offsetY};
-    
-    NSDate * past = [NSDate date];
-    NSTimeInterval current = [past timeIntervalSince1970];
-    
-    customEvent = [NSEvent mouseEventWithType: NSLeftMouseDown
-                                     location: point 
-                                modifierFlags: NSCommandKeyMask
-                                    timestamp: current
-                                 windowNumber: windowId
-                                      context: nil
-                                  eventNumber: 0
-                                   clickCount: 1
-                                     pressure: 0];
-    
-    CGEvent = [customEvent CGEvent];
-    CGEventPostToPSN(&psn, CGEvent);*/
-    [factory mouseDown:x onY:y];
+    CGEventRef CGEvent = [factory mouseDown:x onY:y];
+    CGEventPostToPSN(&psn, CGEvent);
     
 }
 
 - (void) mouseUp: (int)x onY:(int)y {
-    /*CGEventRef CGEvent;
-    NSEvent *customEvent;
-    NSRect screen = [[NSScreen mainScreen]frame];
-    NSSize size= screen.size;
-    
-    int maxX = size.width; 
-    int maxY = size.height;
-    
-    
-    int offsetY = maxY - safariMenuHeigth - y;
-    NSPoint point = {x,offsetY};
-    
-    NSDate * past = [NSDate date];
-    NSTimeInterval current = [past timeIntervalSince1970];
-    
-    customEvent = [NSEvent mouseEventWithType: NSLeftMouseUp
-                                     location: point 
-                                modifierFlags: NSCommandKeyMask
-                                    timestamp: current
-                                 windowNumber: windowId
-                                      context: nil
-                                  eventNumber: 0
-                                   clickCount: 1
-                                     pressure: 0];
-    
-    CGEvent = [customEvent CGEvent];
-    CGEventPostToPSN(&psn, CGEvent);*/
-     [factory mouseUp:x onY:y];
+    CGEventRef CGEvent =  [factory mouseUp:x onY:y];
+    CGEventPostToPSN(&psn, CGEvent);
 }
 
 - (void)stop {

@@ -39,7 +39,7 @@
 
 
 
-- (void) mouseDown: (int)x onY:(int)y {
+- (CGEventRef) mouseDown: (int)x onY:(int)y {
     CGEventRef CGEvent;
     NSEvent *customEvent;
     NSRect screen = [[NSScreen mainScreen]frame];
@@ -55,8 +55,6 @@
     NSDate * past = [NSDate date];
     NSTimeInterval current = [past timeIntervalSince1970];
    
-    int* wid = [app windowId];
-    int i = &wid;
     customEvent = [NSEvent mouseEventWithType: NSLeftMouseDown
                                      location: point 
                                 modifierFlags: NSCommandKeyMask
@@ -68,12 +66,11 @@
                                      pressure: 0];
     
     CGEvent = [customEvent CGEvent];
-    ProcessSerialNumber psn = [app psn];
-    CGEventPostToPSN(&psn, CGEvent);
+    return CGEvent;
     
 }
 
-- (void) mouseUp: (int)x onY:(int)y {
+- (CGEventRef) mouseUp: (int)x onY:(int)y {
     CGEventRef *CGEvent;
     NSEvent *customEvent;
     NSRect screen = [[NSScreen mainScreen]frame];
@@ -100,8 +97,7 @@
                                      pressure: 0];
     
     CGEvent = [customEvent CGEvent];
-    ProcessSerialNumber psn = [app psn];
-    CGEventPostToPSN(&psn, CGEvent);
+    return CGEvent;
 }
 
 
