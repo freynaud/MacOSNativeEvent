@@ -1,20 +1,20 @@
 //
-//  EventAwareApplication.m
+//  AUT.m
 //  MacOSNativeEvent
 //
-//  Created by François Reynaud on 11/07/2011.
+//  Created by François Reynaud on 12/07/2011.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "EventAwareApplication.h"
-#import <AppKit/AppKit.h>
+#import "AUT.h"
+#import "EventFactory.h"
 
-@implementation EventAwareApplication
 
+@implementation AUT
 
 + (void) initialize {
     launchPath = @"/Applications/Safari.app/Contents/MacOS/Safari";
-    safariMenuHeigth = 72;
+    apps = [[NSMutableDictionary alloc]init];
 }
 
 - (id)init
@@ -35,9 +35,12 @@
 
 
 
+@synthesize sessionId;
 @synthesize args;
 @synthesize windowId;
 @synthesize pid;
+@synthesize factory;
+@synthesize psn;
 
 //@property NSArray *args;
 //@property int  pid;
@@ -47,9 +50,18 @@
     self = [super init];
     if (self) {
         self.args = args;
+        NSString *html = (NSString*)[args objectAtIndex:0];
+        sessionId = [html  stringByReplacingOccurrencesOfString:@".html" withString:@""];
+        [apps setObject:self forKey:sessionId];
+        factory = [[EventFactory alloc] initWithApplication:self];
+        //NSLog(@"-> %@",apps);
     }
     return self;
     
+}
+
++ (AUT*)getApplicationForSession: (NSString *)sessionId {
+    return [apps objectForKey:sessionId];
 }
 
 - (void)start {
@@ -110,18 +122,20 @@
                 CFNumberGetValue(widRef, CFNumberGetType(widRef), &tmp);
                 int wid = tmp;
                 windowId = wid;
+                NSLog(@"on windowId : %d",windowId);
                 return windowId;
             }
             
         }
         NSLog(@"Cannot find the windows id. Trying again.");
         sleep(1);
-    }   
+    }
+    return windowId;
 }
 
 
 - (void) mouseDown: (int)x onY:(int)y {
-    CGEventRef CGEvent;
+    /*CGEventRef CGEvent;
     NSEvent *customEvent;
     NSRect screen = [[NSScreen mainScreen]frame];
     NSSize size= screen.size;
@@ -147,11 +161,13 @@
                                      pressure: 0];
     
     CGEvent = [customEvent CGEvent];
-    CGEventPostToPSN(&psn, CGEvent);
+    CGEventPostToPSN(&psn, CGEvent);*/
+    [factory mouseDown:x onY:y];
+    
 }
 
 - (void) mouseUp: (int)x onY:(int)y {
-    CGEventRef CGEvent;
+    /*CGEventRef CGEvent;
     NSEvent *customEvent;
     NSRect screen = [[NSScreen mainScreen]frame];
     NSSize size= screen.size;
@@ -177,12 +193,16 @@
                                      pressure: 0];
     
     CGEvent = [customEvent CGEvent];
-    CGEventPostToPSN(&psn, CGEvent);
+    CGEventPostToPSN(&psn, CGEvent);*/
+     [factory mouseUp:x onY:y];
 }
 
 - (void)stop {
     if (task != nil){
         [task terminate];
+    }
+    if (sessionId!=nil){
+        [apps removeObjectForKey:sessionId];
     }
 }
 
