@@ -145,6 +145,11 @@
     CGEventPostToPSN(&psn, CGEvent);
 }
 
+- (void) mouseDragged: (int)x onY:(int)y{
+    CGEventRef CGEvent =  [factory mouseDragged:x onY:y];
+    CGEventPostToPSN(&psn, CGEvent);
+}
+
 - (void)stop {
     if (task != nil){
         [task terminate];

@@ -100,6 +100,38 @@
     return CGEvent;
 }
 
+- (CGEventRef) mouseDragged: (int)x onY:(int)y {
+    CGEventRef *CGEvent;
+    NSEvent *customEvent;
+    NSRect screen = [[NSScreen mainScreen]frame];
+    NSSize size= screen.size;
+    
+    int maxX = size.width; 
+    int maxY = size.height;
+    
+    
+    int offsetY = maxY - safariMenuHeigth - y;
+    NSPoint point = {x,offsetY};
+    
+    NSDate * past = [NSDate date];
+    NSTimeInterval current = [past timeIntervalSince1970];
+    
+    customEvent = [NSEvent mouseEventWithType:NSLeftMouseDragged
+                       location:point
+                  modifierFlags:NSCommandKeyMask
+                      timestamp:current
+                   windowNumber: [app windowId]
+                        context:nil
+                    eventNumber:0
+                     clickCount:1
+                       pressure:0];
+
+    
+    CGEvent = [customEvent CGEvent];
+    return CGEvent;
+}
+
+
 
 
 

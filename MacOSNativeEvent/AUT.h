@@ -48,5 +48,6 @@ static NSMutableDictionary *apps;
 
 - (void) mouseDown: (int)x onY:(int)y;
 - (void) mouseUp: (int)x onY:(int)y;
+- (void) mouseDragged: (int)x onY:(int)y;
 
 @end
