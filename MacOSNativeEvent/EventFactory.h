@@ -13,6 +13,7 @@ static int safariMenuHeigth;
 
 @interface EventFactory : NSObject {
     AUT *app;    
+    int eventCount;
 }
 
 
@@ -21,5 +22,6 @@ static int safariMenuHeigth;
 - (CGEventRef) mouseDown: (int)x onY:(int)y;
 - (CGEventRef) mouseUp: (int)x onY:(int)y;
 - (CGEventRef) mouseDragged: (int)x onY:(int)y;
+- (CGEventRef) mouseMove: (int)x onY:(int)y;
 
 @end

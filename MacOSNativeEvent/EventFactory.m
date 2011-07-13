@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        eventCount = 0;
     }
     
     return self;
@@ -57,11 +57,11 @@
    
     customEvent = [NSEvent mouseEventWithType: NSLeftMouseDown
                                      location: point 
-                                modifierFlags: NSCommandKeyMask
+                                modifierFlags: 0 | NSCommandKeyMask
                                     timestamp: current
                                  windowNumber: [app windowId]
                                       context: nil
-                                  eventNumber: 0
+                                  eventNumber: ++eventCount
                                    clickCount: 1
                                      pressure: 0];
     
@@ -88,11 +88,11 @@
     
     customEvent = [NSEvent mouseEventWithType: NSLeftMouseUp
                                      location: point 
-                                modifierFlags: NSCommandKeyMask
+                                modifierFlags: 0 //| NSCommandKeyMask
                                     timestamp: current
                                  windowNumber: [app windowId]
                                       context: nil
-                                  eventNumber: 0
+                                  eventNumber: ++eventCount
                                    clickCount: 1
                                      pressure: 0];
     
@@ -118,15 +118,45 @@
     
     customEvent = [NSEvent mouseEventWithType:NSLeftMouseDragged
                        location:point
-                  modifierFlags:NSCommandKeyMask
+                  modifierFlags:0 //| NSCommandKeyMask
                       timestamp:current
                    windowNumber: [app windowId]
                         context:nil
-                    eventNumber:0
+                    eventNumber:++eventCount
                      clickCount:1
                        pressure:0];
 
+   usleep(5000);
+    CGEvent = [customEvent CGEvent];
+   return CGEvent;
+}
+
+- (CGEventRef) mouseMove: (int)x onY:(int)y {
+    CGEventRef *CGEvent;
+    NSEvent *customEvent;
+    NSRect screen = [[NSScreen mainScreen]frame];
+    NSSize size= screen.size;
     
+    int maxX = size.width; 
+    int maxY = size.height;
+    
+    int offsetY =    y;
+    NSPoint point = {x,offsetY};
+    
+    NSDate * past = [NSDate date];
+    NSTimeInterval current = [past timeIntervalSince1970];
+    
+    customEvent = [NSEvent mouseEventWithType:NSMouseMoved
+                                     location:point
+                                modifierFlags:0 | NSCommandKeyMask
+                                    timestamp:current
+                                 windowNumber: [app windowId]
+                                      context:nil
+                                  eventNumber:++eventCount
+                                   clickCount:0
+                                     pressure:1];
+    
+     usleep(10000);
     CGEvent = [customEvent CGEvent];
     return CGEvent;
 }

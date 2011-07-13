@@ -30,27 +30,34 @@ int main (int argc, const char * argv[])
     // insert code here...
     NSLog(@"Hello, World!");
     
-    //NSArray *arguments = [NSArray arrayWithObjects: @"af5748c6-5c80-44f0-a019-26856ecab8a1.html", nil];
-    NSArray *arguments = [NSArray arrayWithObjects: @"zwibbler.html", nil];
+    NSArray *arguments = [NSArray arrayWithObjects: @"af5748c6-5c80-44f0-a019-26856ecab8a1.html", nil];
+    //NSArray *arguments = [NSArray arrayWithObjects: @"ebay.html", nil];
     
     
     AUT *safari = [[AUT alloc] initWithParam:arguments];
     [safari start];
     
     
-    //AUT *safari2 = [AUT getApplicationForSession:@"af5748c6-5c80-44f0-a019-26856ecab8a1"];
-    AUT *safari2 = [AUT getApplicationForSession:@"zwibbler"];
+    AUT *safari2 = [AUT getApplicationForSession:@"af5748c6-5c80-44f0-a019-26856ecab8a1"];
+    //AUT *safari2 = [AUT getApplicationForSession:@"ebay"];
     
     NSLog(@"working on safari : %d",[safari2 pid]);
     NSLog(@"on windowId : %d",[safari2 windowId]);
-    [safari2 mouseDown:113 onY:615];
-    [safari2 mouseDragged:114 onY:615];
-    [safari2 mouseDragged:254 onY:520];
-    [safari2 mouseDragged:324 onY:465];
-    [safari2 mouseUp:324 onY:465];
-   
+    //[safari2 mouseDown:50  onY:50];
+    //[safari2 mouseUp:50  onY:50];
+    //[safari2 mouseDown:300 onY:100];
+    for (int i=0;i<1200;i++){
+       [safari2 mouseMove:i onY:i]; 
+    }
+    NSLog(@"done");
     
-    sleep(5);
+    //[safari2 mouseUp:400 onY:18];
+    
+    
+    //[safari2 mouseMove:1200 onY:18];
+    //[safari2 mouseUp:100 onY:100];
+   
+    sleep(10);
     [safari2 stop];
     
     return 0;
