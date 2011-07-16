@@ -154,6 +154,14 @@
     CGEventRef CGEvent =  [factory mouseMove:x onY:y];
     CGEventPostToPSN(&psn, CGEvent);
 }
+- (CGEventRef) simulateMouseEvent:(CGEventType)eventType onX:(int)x onY:(int)y {
+    CGEventRef event =  [factory simulateMouseEvent:eventType onX:x onY:y];
+    CGPoint p=CGEventGetLocation(event);
+    CGEventType t = CGEventGetType(event);
+    CGEventFlags f = CGEventGetFlags(event);
+    CGEventPostToPSN(&psn, event);
+    CFRelease(event);
+}
 
 - (void)stop {
     if (task != nil){

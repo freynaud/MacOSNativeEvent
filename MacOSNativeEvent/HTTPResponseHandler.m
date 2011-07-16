@@ -15,6 +15,7 @@
 #import "HTTPResponseHandler.h"
 #import "HTTPServer.h"
 #import "JSONKit.h"
+#import "AUT.h"
 
 @implementation HTTPResponseHandler
 
@@ -162,7 +163,7 @@ static NSMutableArray *registeredHandlers = nil;
     [(NSString *)CFHTTPMessageCopyRequestMethod(aRequest)
      autorelease];
     
-        
+    
     
 	Class classForRequest =
     [self handlerClassForRequest:aRequest
@@ -223,11 +224,11 @@ static NSMutableArray *registeredHandlers = nil;
         }else {
             NSData *data = [fileHandle availableData];
             json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-           // NSLog(@"got a body");
+            // NSLog(@"got a body");
             //NSLog(json);
             
         }
-              
+        
 		server = [aServer retain];
         
 		[[NSNotificationCenter defaultCenter]
@@ -269,13 +270,6 @@ static NSMutableArray *registeredHandlers = nil;
     
     
     NSString *body = [self process:requestMethod withURL:url andJSON:json];
-    
-    /*if (json != nil ){
-         body = [NSString stringWithFormat: @"POST %@" , json ];
-        sleep(10);
-    }else {
-       body = [NSString stringWithFormat: @"GET %@" , [url absoluteURL] ];
-    }*/
     CFDataRef content = [body dataUsingEncoding:NSUTF8StringEncoding];
     
     
@@ -302,14 +296,56 @@ static NSMutableArray *registeredHandlers = nil;
 }
 
 - (NSString*) process: (NSString*)method withURL:(NSURL*)url andJSON:(NSString*)json {
+    NSString* res; 
     if (json != nil){
         NSDictionary *deserializedData = [json objectFromJSONString];
-        //Helpful snippet to log all the deserialized objects and their keys
-        NSLog(@"%@", [deserializedData description]);
-        return [NSString stringWithFormat: @"POST %@" , json ];
+        
+        NSLog(@"process with url %@ and json %@", url, [deserializedData description]);
+        
+        
+        NSString* genericPath = [deserializedData objectForKey:@"genericPath"];
+        
+        if ([@"/session" isEqualToString:genericPath]){
+            id content =  [deserializedData objectForKey:@"content"];
+            NSString* redirectFile = [content objectForKey:@"redirectFile"];
+            NSString* session = [content objectForKey:@"session"];
+            NSArray *arguments = [NSArray arrayWithObjects: redirectFile, nil];
+            AUT *safari = [[AUT alloc] initWithParam:arguments];
+            [safari start];
+            res = [NSString stringWithFormat: @"POST %@" , json ];
+            NSMutableDictionary *result = [[NSMutableDictionary alloc]init];
+            [result setObject:session forKey:@"sessionId"];
+            [result setObject:@"1" forKey:@"status"];
+            res = [result JSONString];
+            
+        }else if ([@"/session/:sessionId/element/:id/click" isEqualToString:genericPath]){
+            id content =  [deserializedData objectForKey:@"content"];
+            NSNumber *xt = [content objectForKey:@"x"];
+            NSNumber *yt = [content objectForKey:@"y"];
+            int x = [xt intValue];
+            int y = [yt intValue];
+            
+            NSString *session = [deserializedData objectForKey:@"session"];
+            AUT *app = [AUT getApplicationForSession:session];
+            
+            [app mouseDown:x  onY:y];
+            [app mouseUp:x  onY:y];
+            NSMutableDictionary *result = [[NSMutableDictionary alloc]init];
+            [result setObject:session forKey:@"sessionId"];
+            [result setObject:@"1" forKey:@"status"];
+            res = [result JSONString];
+            
+            
+        }else {
+            res = [NSString stringWithFormat: @"NOT IMLEMENTED : POST %@" , json ];
+        }
+        
+        
     }else {
-        [NSString stringWithFormat: @"GET %@" , [url absoluteURL] ];
+        res = [NSString stringWithFormat: @"GET %@" , [url absoluteURL] ];
     }
+    return res;
+    
 }
 
 //

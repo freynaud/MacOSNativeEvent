@@ -266,9 +266,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HTTPServer);
 //
 - (void)receiveIncomingConnectionNotification:(NSNotification *)notification
 {
+    
+    //NSLog(@"new receiveIncomingConnectionNotification.");
 	NSDictionary *userInfo = [notification userInfo];
 	NSFileHandle *incomingFileHandle =
     [userInfo objectForKey:NSFileHandleNotificationFileHandleItem];
+    
+   
     
     if(incomingFileHandle)
 	{
@@ -304,7 +308,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HTTPServer);
 {
 	NSFileHandle *incomingFileHandle = [notification object];
 	NSData *data = [incomingFileHandle availableData];
-	
+    
+    //NSLog(@"new receiveIncomingDataNotification.");
+
+    NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"CONTENT OF REQUEST :  %@",json);
+    
 	if ([data length] == 0)
 	{
 		[self stopReceivingForFileHandle:incomingFileHandle close:NO];
@@ -344,8 +353,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HTTPServer);
 		[self stopReceivingForFileHandle:incomingFileHandle close:NO];
         
         
-        [NSThread detachNewThreadSelector:@selector(startResponse) toTarget:handler withObject:nil];
-		//[handler startResponse];
+        //[NSThread detachNewThreadSelector:@selector(startResponse) toTarget:handler withObject:nil];
+		[handler startResponse];
         return;
 	}
     

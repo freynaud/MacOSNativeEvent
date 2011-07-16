@@ -50,6 +50,7 @@ static NSMutableDictionary *apps;
 - (void) mouseUp: (int)x onY:(int)y;
 - (void) mouseDragged: (int)x onY:(int)y;
 - (void) mouseMove: (int)x onY:(int)y;
+- (CGEventRef) simulateMouseEvent:(CGEventType)eventType onX:(int)x onY:(int)y;
 
 
 @end

@@ -77,20 +77,6 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MacOSNativeEvent/EventFactory.m"
-         timestampString = "332191085.146792"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
-         landmarkName = "-mouseDown:onY:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "MacOSNativeEvent/EventFactory.m"
          timestampString = "332190504.69322"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -133,11 +119,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MacOSNativeEvent/EventFactory.m"
-         timestampString = "332191085.146792"
+         timestampString = "332289825.889649"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
          landmarkName = "-mouseUp:onY:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -147,11 +133,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MacOSNativeEvent/EventFactory.m"
-         timestampString = "332271062.487356"
+         timestampString = "332321633.666459"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "-mouseMove:onY:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -160,12 +146,40 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "MacOSNativeEvent/main.m"
-         timestampString = "332284877.329135"
+         filePath = "MacOSNativeEvent/EventFactory.m"
+         timestampString = "332289825.889649"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "49"
-         endingLineNumber = "49"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
+         landmarkName = "-mouseUp:onY:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MacOSNativeEvent/EventFactory.m"
+         timestampString = "332317914.226157"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
+         landmarkName = "-mouseDragged:onY:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MacOSNativeEvent/main.m"
+         timestampString = "332350170.416978"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -174,14 +188,42 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "MacOSNativeEvent/main.m"
-         timestampString = "332284879.157602"
+         filePath = "MacOSNativeEvent/HTTPResponseHandler.m"
+         timestampString = "332505232.630701"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
-         landmarkName = "main()"
-         landmarkType = "7">
+         startingLineNumber = "344"
+         endingLineNumber = "344"
+         landmarkName = "-process:withURL:andJSON:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MacOSNativeEvent/HTTPResponseHandler.m"
+         timestampString = "332505232.630701"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "336"
+         endingLineNumber = "336"
+         landmarkName = "-process:withURL:andJSON:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MacOSNativeEvent/HTTPResponseHandler.m"
+         timestampString = "332503797.437327"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "219"
+         endingLineNumber = "219"
+         landmarkName = "-initWithRequest:method:url:headerFields:fileHandle:server:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
